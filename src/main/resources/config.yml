@@ -1,0 +1,13 @@
+# -------------------------------------------------- #
+#      CustomCompassTracker Configuration File       #
+# -------------------------------------------------- #
+
+# The maximum number of targets a single player is allowed to save.
+# Default: 5
+max-targets: 5
+
+# A list of world names where the custom compass functionality will be disabled.
+# Players will not be able to use any of the plugin's commands in these worlds.
+ignored-worlds:
+  - "world_nether"
+  - "world_the_end"
