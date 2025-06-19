@@ -1,0 +1,4 @@
+name: CustomCompassTracker
+version: '1.0-SNAPSHOT'
+main: io.mewb.CustomCompassTracker
+api-version: '1.21'
