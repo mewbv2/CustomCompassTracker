@@ -9,28 +9,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Main class for the CustomCompassTracker plugin.
- * Handles plugin startup, shutdown, and command registration.
- */
 public class CustomCompassTracker extends JavaPlugin {
 
     private TargetManager targetManager;
 
     @Override
     public void onEnable() {
-        // Ensure default config is saved and loaded
         saveDefaultConfig();
-
-        // Read configuration values
+        
         int maxTargets = getConfig().getInt("max-targets", 5);
 
-        // Initialize the managers
         this.targetManager = new TargetManager(maxTargets);
         CommandManager commandManager = new CommandManager(this, targetManager);
         TabCompletionManager tabCompletionManager = new TabCompletionManager(targetManager);
 
-        // Register commands and their respective executors and tab completers
         List<String> commandsToRegister = Arrays.asList("settarget", "listtargets", "tracktarget", "removetarget");
         for (String commandName : commandsToRegister) {
             PluginCommand command = getCommand(commandName);
